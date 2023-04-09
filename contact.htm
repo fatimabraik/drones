@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Responsive Contact Us Page in HTML and CSS</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"><span>D</span>rone-sous-marin</a>
+      <div class="menuToggle" onclick="toggleMenu();"></div>
+      <ul class="navbar">
+          <li><a href="index.htm" onclick="toggleMenu();">Accueil</a></li>
+          <li><a href="about.htm" onclick="toggleMenu();">A propos</a></li>
+          <li><a href="#menu" onclick="toggleMenu();">services</a></li>
+          <li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+          <li><a href="#temoignage" onclick="toggleMenu();">Temoignage</a></li>
+          <li><a href="contact.htm" onclick="toggleMenu();">Contact</a></li>
+          <a href="#" class="btn-reserve"onclick="toggleMenu();">Demande devis</a>
+      </ul>
+  </header>
+    <div class="container">
+      <div class="contact_data2">
+        <ul>
+          <li>
+            <i class="fa-solid fa-location-dot"></i>
+            <strong>Location:</strong>
+            <p>A108 Adam Street, New York, NY 535022</p>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <strong>Email:</strong>
+            <p>inodrone@gmail </p>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <strong>Call:</strong>
+            <p>061590957</p>
+          </li>
+        </ul>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3440.7108995238186!2d-9.584067207772677!3d30.41594323869285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdb3b7328002ec9f%3A0xcaf763debd623477!2sINO%20Communication!5e0!3m2!1sen!2sbg!4v1679479475082!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          
+        </div>
+      </div>
+      <div class="contact_data">
+        <h2>Contact Me</h2>
+        <form action="mailto:inostg02@gmail.com" method="post" enctype="text/plain">
+          <label for="name">full Name</label>
+          <input type="text" name="name"  id="contact-name" onkeyup="validateName()" />
+          <span id="name-error"></span>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="contact-email" onkeyup="validateEmail()" />
+          <span id="email-error"></span>
+          <label for="subject">Subject</label>
+          <input type="text" name="subject" />
+          <label for="message">Message</label>
+          <textarea name="" id="contact-message" cols="30" rows="05"  onkeyup="validateMessage()" >
+
+          </textarea>
+          <span id="message-error"></span>
+          <button onclick="return validateForm()">Envoyer Message</button>
+          <span id="subit-error"></span>
+
+        </form>
+      </div>
+    </div>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+     var nameError = document.getElementById('name-error');
+     var emailError = document.getElementById('email-error');
+     var messageError = document.getElementById('message-error');
+     var submitError = document.getElementById('subit-error');
+
+
+    function validateName(){
+	      var name = document.getElementById('contact-name').value;
+	
+        if(name.length == 0){
+            nameError.innerHTML = 'name is required'
+            return false;
+        }
+	
+	      if(!name.match(/^[A-Za-z]*\s{1}[A-Za-z ]*$/)){
+		        nameError.innerHTML='whrite full name';
+		        return false;
+	      }
+	      nameError.innerHTML='<i class="fa-solid fa-circle-check"></i>';
+	      return true;
+   }
+    function validateEmail(){
+        var email = document.getElementById('contact-email').value;
+
+        if(email.length==0){
+            emailError.innerHTML = 'email is required'
+            return false;
+        }
+      
+        emailError.innerHTML='<i class="fa-solid fa-circle-check"></i>';
+	      return true;
+        }
+    function validateMessage(){
+        var message = document.getElementById('contact-message').value;
+        var required = 20;
+        var left = required - message.length;
+        
+        if( left>0){
+          messageError . innerHTML = left + 'more characters required';
+          return false;
+        }
+          messageError.innerHTML='<i class="fa-solid fa-circle-check"></i>';
+	        return true;
+        }
+    function validateForm(){
+        if (!validateEmail() || !validateName() || !validateMessage()){
+          submitError.innerHTML = 'please fix error to submit';
+          return false;
+  }
+       submitError.innerHTML='<i class="fa-solid fa-circle-check"></i>';
+       return true;
+}
+    </script>
+    <script type="text/javascript">
+      window.addEventListener('scroll', function(){
+          const header =document.querySelector('header');
+          header.classList.toggle("sticky", window.scrollY > 0 );
+      });
+ 
+      function toggleMenu(){
+          const tmenuToggle = document.querySelector('.menuToggle');
+          const navbar = document.querySelector('.navbar');
+          navbar.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+      }
+  </script>
+  </body>
+</html>

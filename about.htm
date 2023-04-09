@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Herr+Von+Muellerhoff&family=Poppins:wght@200;300;400;500;600;700;800;900&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <title>Responsive Contact Us Page in HTML and CSS</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"><span>R</span>esto</a>
+      <div class="menuToggle" onclick="toggleMenu();"></div>
+      <ul class="navbar">
+          <li><a href="index.htm" onclick="toggleMenu();">Accueil</a></li>
+          <li><a href="#apropos" onclick="toggleMenu();">A propos</a></li>
+          <li><a href="#menu" onclick="toggleMenu();">Menu</a></li>
+          <li><a href="#expert" onclick="toggleMenu();">Expert</a></li>
+          <li><a href="#temoignage" onclick="toggleMenu();">Temoignage</a></li>
+          <li><a href="contact.htm" onclick="toggleMenu();">Contact</a></li>
+          <a href="#" class="btn-reserve"onclick="toggleMenu();">Reservation</a>
+      </ul>
+      
+  </header>
+  <div class="header-about">
+  <div class="bottom-header-sub">
+    <div class="container2">
+    <div class="sub-page">
+      <h2>about us</h2>
+      </div>
+      <div>
+      </div>
+      <main class="main" id="main" style="padding:50px 0;text-align:left; " >
+        <div class="container2">
+      <div class="content-sub-about">
+        <img class='imag-about' src="./image de stage/pilot-drone-formation-maroc-300x200.jpg">
+        <h3><span>QUI</span> Sommes Nous</h3>
+        <p>La société inoDrone est spécialisée dans le développement de solutions liées à l’usage des
+          drones. Nous assistons nos clients afin d’adapter ces nouvelles technologies à leurs
+          domaines d’activités, en leur fournissant des drones et des accessoires spécifiques, ainsi que
+          des solutions d’intégration.
+          Nos compétences et nos outils développés grâce aux avancées technologiques récentes,
+          nous permettent de vous proposer un large panel de prestations: des prospections,
+          inspections ou encore des études scientifiques...Tout cela dans le respect de la
+          réglementation en vigueur.
+          inoDrone intervient auprès des professionnels mais également des particuliers, quel que soit
+          le besoin ou la mission, dans le respect de la réglementation en vigueur.
+          inoDrone dispose également d’un centre de formation qui vous permettra de vous
+          familiariser avec les différents drones, les métiers liés ainsi que les bonnes pratiques pour
+          des interventions en toute sécurité.</p>
+      </div>
+    </div>
+    <div class="social">
+      <a href=""><i class="fab fa-facebook-f"></i></a>
+      <a href=""><i class="fab fa-instagram"></i></a>
+      <a href=""><i class="fab fa-twitter"></i></a>
+    </div>
+    </main>
+  </div>
+    <script type="text/javascript">
+      window.addEventListener('scroll', function(){
+          const header =document.querySelector('header');
+          header.classList.toggle("sticky", window.scrollY > 0 );
+      });
+ 
+      function toggleMenu(){
+          const tmenuToggle = document.querySelector('.menuToggle');
+          const navbar = document.querySelector('.navbar');
+          navbar.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+      }
+  </script>
+  <div class="team-page">
+  <section class="swiper mySwiper">
+
+    <div class="swiper-wrapper">
+
+      <div class="card swiper-slide">
+        <div class="card__image">
+          <img src="./image de stage/Chef-de-projets-inoDrone-216x300.jpg" alt="card image">
+        </div>
+
+        <div class="card__content">
+          <span class="card__title">Web Designer</span>
+          <span class="card__name">Vanessa Martinez</span>
+          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+         
+        </div>
+      </div>
+
+      <div class="card swiper-slide">
+        <div class="card__image">
+          <img src="./image de stage/Developpeur-Data-Analyst-inoDrone-216x300.jpg" alt="card image">
+        </div>
+
+        <div class="card__content">
+          <span class="card__title">Ui Designer</span>
+          <span class="card__name">Sarah Bowen</span>
+          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+        
+        </div>
+      </div>
+
+      <div class="card swiper-slide">
+        <div class="card__image">
+          <img src="./image de stage/Directeur-general-Pilote-inoDrone-216x300.jpg" alt="card image">
+        </div>
+
+        <div class="card__content">
+          <span class="card__title">Web Developer</span>
+          <span class="card__name">David Murphy</span>
+          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+         
+        </div>
+      </div>
+
+      <div class="card swiper-slide">
+        <div class="card__image">
+          <img src="./image de stage/Graphiste-et-web-designer-inoDrone-216x300.jpg" alt="card image">
+        </div>
+
+        <div class="card__content">
+          <span class="card__title">Mobile Designer</span>
+          <span class="card__name">Kelsey West</span>
+          <p class="card__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit veritatis labore provident non tempora odio est sunt, ipsum</p>
+         
+        </div>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+<!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+</body>
+</html>
+      
+ 
